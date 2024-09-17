@@ -19,6 +19,11 @@ window.onload = function() {
       "while I was praying"
     ];
 
+    let randomElement = function(arreglo) {
+      let numarreglo = Math.floor(Math.random() * arreglo.length);
+      return arreglo[numarreglo];
+    };
+
     //Variables con Math.random y Math.floor: para generar números aleatorios y seleccionar elementos al azar de los array who,action,what,when.
     let numwho = Math.floor(Math.random() * who.length);
     //La variable randomWho se utiliza para almacenar un elemento aleatorio seleccionado del array who lo mismo con las demás variables y arrays.
