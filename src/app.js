@@ -6,8 +6,12 @@ import "./assets/img/rigo-baby.jpg";
 import "./assets/img/4geeks.ico";
 
 window.onload = function() {
+  let randomElement = function(arreglo) {
+    let numArreglo = Math.floor(Math.random() * arreglo.length);
+    return arreglo[numArreglo];
+  };
+
   function generateExcuse() {
-    //devuelva una excusa aleatoria con la siguiente estructura:
     let who = ["The dog", "My grandma", "The mailman", "My bird"];
     let action = ["ate", "peed", "crushed", "broke"];
     let what = ["my homework", "my phone", "the car"];
@@ -19,16 +23,10 @@ window.onload = function() {
       "while I was praying"
     ];
 
-    //Variables con Math.random y Math.floor: para generar números aleatorios y seleccionar elementos al azar de los array who,action,what,when.
-    let numwho = Math.floor(Math.random() * who.length);
-    //La variable randomWho se utiliza para almacenar un elemento aleatorio seleccionado del array who lo mismo con las demás variables y arrays.
-    let randomWho = who[numwho];
-    let numaction = Math.floor(Math.random() * action.length);
-    let randomAction = action[numaction];
-    let numwhat = Math.floor(Math.random() * what.length);
-    let randomWhat = what[numwhat];
-    let numwhen = Math.floor(Math.random() * when.length);
-    let randomWhen = when[numwhen];
+    let randomWho = randomElement(who);
+    let randomAction = randomElement(action);
+    let randomWhat = randomElement(what);
+    let randomWhen = randomElement(when);
 
     //Let excuse: Concatenar las variables en una sola cadena.
     let excuse = `${randomWho} ${randomAction} ${randomWhat} ${randomWhen}`;
@@ -36,8 +34,4 @@ window.onload = function() {
   }
   let paragraph = document.getElementById("excuse");
   paragraph.innerText = generateExcuse();
-
-  // console.log("hola");
-  console.log(generateExcuse());
-  // console.log("Hello Rigo from the console!");
 };
